@@ -2,6 +2,9 @@
 
 changes by Huang
 
+Changes Made by Olaf 
+
+Second Change by Olaf 
 Hands on materials for Arctic Data Training Workshop 
 
 * Data 
