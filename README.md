@@ -1,7 +1,6 @@
 # Arctic Training Handson Materials
 
 changes by Huang
-02/12/2019
 
 Hands on materials for Arctic Data Training Workshop 
 
@@ -21,3 +20,5 @@ Change 2
 Change 3 
 
 Hello
+
+
