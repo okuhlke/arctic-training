@@ -5,3 +5,7 @@ Hands on materials for Arctic Data Training Workshop
 * Lessons 
 * Notes 
 * Words
+
+made some changes from RStudio
+
+And some more changes
