@@ -4,7 +4,7 @@ changes by Huang
 
 Changes Made by Olaf 
 
-Second Change by Olaf 
+Second Change by Olaf: 02/12/2019
 Hands on materials for Arctic Data Training Workshop 
 
 * Data 
