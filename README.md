@@ -9,3 +9,6 @@ Hands on materials for Arctic Data Training Workshop
 made some changes from RStudio
 
 And some more changes
+
+Change 1 
+
