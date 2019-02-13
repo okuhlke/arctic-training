@@ -257,25 +257,15 @@ airtemps_F &lt;- (airtemps - 32) * 5/9</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<pre><code></code></pre>
-<pre><code></code></pre>
-<p>```</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmFocl90b19jZWxzaXVzIDwtIGZ1bmN0aW9uZmFocilcbiAgY2Vsc2l1cyA8LSAoZmFoci0zMikqNS85XG4gIHJldHVybihjZWxzaXVzKSBcbmBgYCJ9 -->
-<pre class="r"><code>fahr_to_celsius &lt;- functionfahr)
-  celsius &lt;- (fahr-32)*5/9
-  return(celsius) </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
 </div>
 <div id="write-a-function-to-do-that" class="section level1">
 <h1>Write a function to do that</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuPVxuYGBgIn0= -->
-<pre class="r"><code>=</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgY29udmVydHMgbnVtYmVyaWNhbCB0ZW1wIGRhdGEgZnJvbSBkZWdyZWVzIEYgdG8gQ1xuZmFocl90b19jZWxzaXVzIDwtIGZ1bmN0aW9uKGZhaHIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>#' converts numberical temp data from degrees F to C
+fahr_to_celsius &lt;- function(fahr)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -285,7 +275,7 @@ airtemps_F &lt;- (airtemps - 32) * 5/9</code></pre>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBXb3JrIHdpdGggc29tZSBkYXRhIGluIGRlZ3JlZXMgRmFocmVuaGVpdCAKCi0gY29udmVydCB0byBDZWxzaXVzIAoKCmBgYHtyfQphaXJ0ZW1wcyA8LSBjKDIxMiwgMTAwLCAzMiwgNjQsIDAsIC0yMCkKCmFpcnRlbXAxIDwtIChhaXJ0ZW1wc1sxXSAtIDMyKSAqIDUvOQphaXJ0ZW1wMiA8LSAoYWlydGVtcHNbMl0gLSAzMikgKiA1LzkKYWlydGVtcDMgPC0gKGFpcnRlbXBzWzNdIC0gMzIpICogNS85CmFpcnRlbXA0IDwtIChhaXJ0ZW1wc1s0XSAtIDMyKSAqIDUvOQphaXJ0ZW1wNSA8LSAoYWlydGVtcHNbNV0gLSAzMikgKiA1LzkKYWlydGVtcHNfRiA8LSAoYWlydGVtcHMgLSAzMikgKiA1LzkKYGBgCmBgYAoKYGBgCmBgYApgYGAKYGBgCgpgYGB7cn0KZmFocl90b19jZWxzaXVzIDwtIGZ1bmN0aW9uZmFocikKICBjZWxzaXVzIDwtIChmYWhyLTMyKSo1LzkKICByZXR1cm4oY2Vsc2l1cykgCmBgYAoKCiMgV3JpdGUgYSBmdW5jdGlvbiB0byBkbyB0aGF0CgpgYGB7cn0KPQpgYGAKCiMgV3JpdGUgYSBmdW5jdGlvbiB0byBnbyBDIHRvIEYgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBXb3JrIHdpdGggc29tZSBkYXRhIGluIGRlZ3JlZXMgRmFocmVuaGVpdCAKCi0gY29udmVydCB0byBDZWxzaXVzIAoKCmBgYHtyfQphaXJ0ZW1wcyA8LSBjKDIxMiwgMTAwLCAzMiwgNjQsIDAsIC0yMCkKCmFpcnRlbXAxIDwtIChhaXJ0ZW1wc1sxXSAtIDMyKSAqIDUvOQphaXJ0ZW1wMiA8LSAoYWlydGVtcHNbMl0gLSAzMikgKiA1LzkKYWlydGVtcDMgPC0gKGFpcnRlbXBzWzNdIC0gMzIpICogNS85CmFpcnRlbXA0IDwtIChhaXJ0ZW1wc1s0XSAtIDMyKSAqIDUvOQphaXJ0ZW1wNSA8LSAoYWlydGVtcHNbNV0gLSAzMikgKiA1LzkKYWlydGVtcHNfRiA8LSAoYWlydGVtcHMgLSAzMikgKiA1LzkKYGBgCgoKIyBXcml0ZSBhIGZ1bmN0aW9uIHRvIGRvIHRoYXQKCmBgYHtyfQojJyBjb252ZXJ0cyBudW1iZXJpY2FsIHRlbXAgZGF0YSBmcm9tIGRlZ3JlZXMgRiB0byBDCmZhaHJfdG9fY2Vsc2l1cyA8LSBmdW5jdGlvbihmYWhyKQoKYGBgCgojIFdyaXRlIGEgZnVuY3Rpb24gdG8gZ28gQyB0byBGIAoK</div>
 
 
 
