@@ -36,4 +36,8 @@ DaDida change 3
 
 Wechsel #4 noch einmal...
 
+<<<<<<< HEAD
 Changes in the master document HERE 
+=======
+Changes in Branch 1 HERE 
+>>>>>>> This_Is_Branch1
