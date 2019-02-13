@@ -15,7 +15,31 @@ library(tidyr)
 
 # toi call stats filter 
 ```
+```{r}
+catch_original <- read.csv(url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1", method = "libcurl"),
+                    stringsAsFactors = FALSE)
+head(catch_original)
 
+```
+
+remove the all and notesRgCode columns using select Pipe operator is control shift M 
+
+```{r}
+catch_long <- catch_original %>% 
+  select(-All, -notesRegCode) %>% 
+  gather(key = "species", value = "catch", -Region, -Year)
+
+head(catch_long)
+```
+
+```{r}
+catch_wide <- catch_long %>% 
+  spread(key = Region, value = catch)
+
+head(catch_wide)
+```
+
+Mike Byerly. Alaska commercial salmon catches by management region (1886- 1997). Gulf of Alaska Data Portal. df35b.304.2.
 
 
 # Reformat Catch Data 
