@@ -89,6 +89,46 @@ head(species_mean)
 * general QA
 # Join the Region Definitions 
 
+
+```{r}
+region_defs <- read.csv(url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.303.1",
+                            method = "libcurl"),
+                        stringsAsFactors = FALSE) %>% 
+    select(code, mgmtArea)
+
+head(region_defs)
+```
+
+
+```{r}
+catch_joined <- left_join(catch_clean, region_defs, by = c("Region"))
+                          
+head(catch_joined)
+```
+
+```{r}
+dates_df <- data.frame(date = c("5/24/1930",
+                                "5/25/1930",
+                                "5/26/1930",
+                                "5/27/1930",
+                                "5/28/1930"),
+                       stringsAsFactors = FALSE)
+```
+
+```{r}
+dates_split <- dates_df %>% 
+  separate(date, into = c("month", "day", "year"), sep = "/", remove = F)
+
+head(dates_split)
+```
+
+```{r}
+dates_unite <- dates_split %>% 
+  unite(col = date_iso, year, month, day, sep = "-")
+
+head(dates_unite)
+```
+
 # Misc 
 
 *
