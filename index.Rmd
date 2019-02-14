@@ -44,6 +44,20 @@ annual_esc <- esc %>%
 
 ```
 
+# csv files 
+
+*.csv
+
+# nc files 
+
+*.nc
+
+#figures/
+
+figures/*
+
+
+
 #genrate plots
 
 ```{r}
