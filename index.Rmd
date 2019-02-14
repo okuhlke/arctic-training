@@ -10,6 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+library(scales)
+library
 ```
 
 # Reformat Data for Plotting 
@@ -33,7 +35,9 @@ esc <- read.csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/urn%3Auuid%3
   
 ```{r}
 annual_esc <- esc %>% 
+  
   separate(sampleDate, into = c("year", "month", "Day"), sep = "-") %>% 
+  mutate(year = as.numeric(year)) %>% 
   group_by(year, Species, SASAP.Region) %>% 
   summarize(count = sum(DailyCount)) %>% 
   filter(Species %in% c("Chinook", "Sockeye", "Chum", "Coho", "Pink")) 
@@ -43,14 +47,24 @@ annual_esc <- esc %>%
 #genrate plots
 
 ```{r}
-ggplot(annual_esc, mapping = aes(x = Species, y = count)) +
-  geom_col(fill = "blue")
+ggplot(filter(annual_esc, SASAP.Region == "Kodiak"), aes(x = year, y = count, color = Species)) +
+  geom_line() +
+  geom_point() +
+  scale_y_continuous(labels = comma) +
+  ggtitle("Kodiak Salmon Escapement") +
+  xlab ("Year") +
+  ylab ("Escapement (Num of fish")
 ```
 
-```{r}
-ggpl
+```{r, fig.width = 7, fig.height = 8}
+ggplot(annual_esc, aes(x = year, y = count, color = Species)) +
+  geom_line() +
+  geom_point() +
+  scale_y_continuous(labels = comma) +
+  facet_wrap(~SASAP.Region, scales = "free_y", ncol = 2) 
+ 
 ```
-  
+ 
 annual_esc 
 
 #Generate plot 
