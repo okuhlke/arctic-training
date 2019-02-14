@@ -11,7 +11,8 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 library(scales)
-library
+library(leaflet)
+library(DT)
 ```
 
 # Reformat Data for Plotting 
@@ -81,7 +82,28 @@ ggplot(annual_esc, aes(x = year, y = count, color = Species)) +
  
 annual_esc 
 
-#Generate plot 
+#Interactive Map
+
+Map the sampling locations 
+* find distinct lat/long 
+
+```{r}
+locations <- esc %>% 
+  distinct(Location, Latitude, Longitude) %>% 
+  drop_na()
+
+head(locations)
+```
+
+```{r, echo = F}
+datatable(locations)
+```
+
+```{r}
+leaflet(locations) %>% 
+  addTiles() %>% 
+  addMarkers(lng = ~Longitude, lat = ~Latitude, popup = ~Location)
+```
 
 
 ## R Markdown
