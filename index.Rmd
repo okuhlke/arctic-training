@@ -1,5 +1,5 @@
 ---
-title: "Index"
+title: "data visualization"
 author: "Olaf"
 date: "2/14/2019"
 output: html_document
@@ -7,7 +7,54 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
 ```
+
+# Reformat Data for Plotting 
+
+Alaska Department of Fish and Game, Division of Commercial Fisheries. 2017. Daily salmon escapement counts from the OceanAK database, Alaska, 1921-2017. Knowledge Network for Biocomplexity. doi:10.5063/F1S46Q6M.
+
+
+```{r}
+esc <- read.csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/urn%3Auuid%3Af119a05b-bbe7-4aea-93c6-85434dcb1c5e", stringsAsFactors = F)
+```
+
+
+#Reformat Data for Plotting 
+
+*Calculate annual escapement by species and region 
+  + separate 
+  + group by 
+  + summarize 
+*Filter for just Pacific Salmon (Sockeye, Chinook, Coho, Pink, Chum)
+  +filter 
+  
+```{r}
+annual_esc <- esc %>% 
+  separate(sampleDate, into = c("year", "month", "Day"), sep = "-") %>% 
+  group_by(year, Species, SASAP.Region) %>% 
+  summarize(count = sum(DailyCount)) %>% 
+  filter(Species %in% c("Chinook", "Sockeye", "Chum", "Coho", "Pink")) 
+
+```
+
+#genrate plots
+
+```{r}
+ggplot(annual_esc, mapping = aes(x = Species, y = count)) +
+  geom_col(fill = "blue")
+```
+
+```{r}
+ggpl
+```
+  
+annual_esc 
+
+#Generate plot 
+
 
 ## R Markdown
 
